@@ -31,9 +31,18 @@ $(function(){
     //number of clicks = 0
     var clicks = 0;
     var cleartimeout;
+    var cssClearTimeout;
+    var blinkClearInterval;
     $('#spin').click(function(){
+        $(".spinner-ring .green-arrow").show();
         if(cleartimeout){
             clearTimeout(cleartimeout)
+        }
+        if(cssClearTimeout){
+            clearTimeout(cssClearTimeout)
+        }
+        if(blinkClearInterval){
+            clearInterval(blinkClearInterval)
         }
         $(".spinner-ring").addClass("spin")
 		
@@ -69,6 +78,21 @@ $(function(){
             $('.spinner-ring').css({
                 'transform' : 'scale(1.16) rotate(' + totalDegree + 'deg)'			
             });
+            cssClearTimeout = setTimeout(function(){
+                var check = true;
+                var css = $(".spinner-inner > .spinner-sec[data-id="+randomNum+"] .spinner-sec-wrapper").css("background");
+                var cssAfter = "#287b3d url(./../images/pattern.png) no-repeat center";
+                blinkClearInterval = setInterval(function(){
+                    if(check){
+                        $(".spinner-inner > .spinner-sec[data-id="+randomNum+"] .spinner-sec-wrapper").css("background", cssAfter);
+                        check = false;
+                    }else{
+                        $(".spinner-inner > .spinner-sec[data-id="+randomNum+"] .spinner-sec-wrapper").css("background", css);
+    
+                        check = true;
+                    }
+                }, 500)
+            }, 6000)
         }, 3000)
 		/*multiply the degree by number of clicks
 	  generate random number between 1 - 360, 
