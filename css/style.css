@@ -1,0 +1,193 @@
+.content-wrapper {
+  position: relative;
+  background: url("./../images/background.jpg") no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+  width: 100%;
+}
+
+.main-content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.details-form {
+  width: 50%;
+}
+
+.details-form h4 {
+  text-align: center;
+  margin-bottom: 45px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #4f4f4f;
+}
+
+.details-form .form-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.details-form .form-wrapper .input-wrapper {
+  width: 48%;
+  margin-bottom: 30px;
+}
+
+.details-form .form-wrapper .input-wrapper input,
+.details-form .form-wrapper .input-wrapper button {
+  border: none;
+  padding: 15px 25px;
+  border-radius: 8px;
+  font-size: 18px;
+  width: 100%;
+  outline: none;
+  height: 100%;
+}
+.details-form .form-wrapper .input-wrapper input::placeholder {
+  color: #959595;
+}
+
+.details-form .form-wrapper .input-wrapper button {
+  background: #62ac3d;
+  text-align: right;
+}
+
+.spinner-inner {
+  height: 280px;
+  width: 280px;
+}
+
+.spinner-inner > .spinner-sec {
+  height: 50%;
+  width: 50%;
+  float: left;
+  padding: 1px;
+}
+
+.spinner-container {
+  position: relative;
+}
+
+.spinner-inner > .spinner-sec .spinner-sec-wrapper {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.spinner-inner > .spinner-sec .spinner-sec-wrapper p{
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    /* transform: translate(-50%, -50%); */
+    width: 70%;
+}
+
+.spinner-inner > .spinner-sec .spinner-sec-wrapper p span{
+    display: block;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.spinner-inner > .spinner-sec2 .spinner-sec-wrapper p{
+    bottom: 5%;
+    left: 5%;
+}
+.spinner-inner > .spinner-sec3 .spinner-sec-wrapper p{
+    top: 5%;
+    right: 5%;
+}
+
+.spinner-inner > .spinner-sec4 .spinner-sec-wrapper p{
+    top: 5%;
+    left: 5%;
+}
+
+.spinner-inner > .spinner-sec1 .spinner-sec-wrapper {
+  border-top-left-radius: 100%;
+  background: #952925 url(./../images/pattern.png) no-repeat center;
+  background-size: 180%;
+  background-position: center center;
+}
+
+.spinner-inner > .spinner-sec2 .spinner-sec-wrapper {
+  border-top-right-radius: 100%;
+  background: #f36b25 url(./../images/pattern.png) no-repeat center;
+  background-size: 180%;
+  background-position: center center;
+}
+
+.spinner-inner > .spinner-sec3 .spinner-sec-wrapper {
+  border-bottom-left-radius: 100%;
+  background: #f36b25 url(./../images/pattern.png) no-repeat center;
+  background-size: 180%;
+  background-position: center center;
+}
+
+.spinner-inner > .spinner-sec4 .spinner-sec-wrapper {
+  background: #952925 url(./../images/pattern.png) no-repeat center;
+  background-size: 180%;
+  background-position: center center;
+  border-bottom-right-radius: 100%;
+}
+
+.spinner-ring {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transform: scale(1.16) rotate(1deg);
+  transition: all 6s cubic-bezier(0, 0.99, 0.44, 0.99);
+  z-index: 1;
+}
+
+.spinner-ring img {
+  width: 100%;
+}
+
+.shadow{
+    position: absolute;
+    bottom: -65px;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.shadow img{
+    max-width: 100%;
+}
+
+/*ANIMATION*/
+@-webkit-keyframes hh {
+  0% {
+    transform: rotate(0deg) scale(1.16);
+    -webkit-transform: rotate(0deg) scale(1.16);
+  }
+
+  100% {
+    transform: rotate(359deg) scale(1.16);
+    -webkit-transform: rotate(359deg) scale(1.16);
+  }
+}
+
+@keyframes hh {
+  0% {
+    transform: rotate(0deg) scale(1.16);
+    -webkit-transform: rotate(0deg) scale(1.16);
+  }
+
+  100% {
+    transform: rotate(359deg) scale(1.16);
+    -webkit-transform: rotate(359deg) scale(1.16);
+  }
+}
+
+.spin {
+  -webkit-animation: hh 3s; /* Chrome, Safari, Opera */
+  animation: hh 0.2s infinite linear;
+}
