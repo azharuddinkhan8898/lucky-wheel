@@ -1,44 +1,50 @@
 @font-face {
-  font-family: 'Avenir-book';
-  src: url('./../fonts/');
-  src: url('./../fonts/?#iefix') format('embedded-opentype'),
-      url('./../fonts/AvenirLTStd-Book.woff2') format('woff2'),
-      url('./../fonts/AvenirLTStd-Book.woff') format('woff'),
-      url('./../fonts/AvenirLTStd-Book.ttf') format('truetype'),
-      url('./../fonts/AvenirLTStd-Book.svg#AvenirLTStd-Book') format('svg');
+  font-family: "Avenir-book";
+  src: url("./../fonts/");
+  src: url("./../fonts/?#iefix") format("embedded-opentype"),
+    url("./../fonts/AvenirLTStd-Book.woff2") format("woff2"),
+    url("./../fonts/AvenirLTStd-Book.woff") format("woff"),
+    url("./../fonts/AvenirLTStd-Book.ttf") format("truetype"),
+    url("./../fonts/AvenirLTStd-Book.svg#AvenirLTStd-Book") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Avenir-roman';
-  src: url('./../fonts/AvenirLTStd-Roman.eot');
-  src: url('./../fonts/AvenirLTStd-Roman.eot?#iefix') format('embedded-opentype'),
-      url('./../fonts/AvenirLTStd-Roman.woff2') format('woff2'),
-      url('./../fonts/AvenirLTStd-Roman.woff') format('woff'),
-      url('./../fonts/AvenirLTStd-Roman.ttf') format('truetype'),
-      url('./../fonts/AvenirLTStd-Roman.svg#AvenirLTStd-Roman') format('svg');
+  font-family: "Avenir-roman";
+  src: url("./../fonts/AvenirLTStd-Roman.eot");
+  src: url("./../fonts/AvenirLTStd-Roman.eot?#iefix")
+      format("embedded-opentype"),
+    url("./../fonts/AvenirLTStd-Roman.woff2") format("woff2"),
+    url("./../fonts/AvenirLTStd-Roman.woff") format("woff"),
+    url("./../fonts/AvenirLTStd-Roman.ttf") format("truetype"),
+    url("./../fonts/AvenirLTStd-Roman.svg#AvenirLTStd-Roman") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Avenir-medium';
-  src: url('./../fonts/AvenirLTStd-Medium.eot');
-  src: url('./../fonts/AvenirLTStd-Medium.eot?#iefix') format('embedded-opentype'),
-      url('./../fonts/AvenirLTStd-Medium.woff2') format('woff2'),
-      url('./../fonts/AvenirLTStd-Medium.woff') format('woff'),
-      url('./../fonts/AvenirLTStd-Medium.ttf') format('truetype'),
-      url('./../fonts/AvenirLTStd-Medium.svg#AvenirLTStd-Medium') format('svg');
+  font-family: "Avenir-medium";
+  src: url("./../fonts/AvenirLTStd-Medium.eot");
+  src: url("./../fonts/AvenirLTStd-Medium.eot?#iefix")
+      format("embedded-opentype"),
+    url("./../fonts/AvenirLTStd-Medium.woff2") format("woff2"),
+    url("./../fonts/AvenirLTStd-Medium.woff") format("woff"),
+    url("./../fonts/AvenirLTStd-Medium.ttf") format("truetype"),
+    url("./../fonts/AvenirLTStd-Medium.svg#AvenirLTStd-Medium") format("svg");
   font-weight: 500;
   font-style: normal;
 }
 
-*{
-  font-family: 'Avenir-book', sans-serif;
+* {
+  font-family: "Avenir-book", sans-serif;
 }
 
-header{
+body, html {
+  overflow-x: hidden;
+}
+
+header {
   display: flex;
   justify-content: space-between;
   padding: 30px;
@@ -48,7 +54,7 @@ header{
   left: 0px;
 }
 
-header img{
+header img {
   height: 90px;
 }
 
@@ -112,34 +118,35 @@ header img{
   transition: all 0.3s ease;
 }
 
-.details-form .form-wrapper .input-wrapper button:hover{
+.details-form .form-wrapper .input-wrapper button:hover {
   background: #108e45;
 }
 
-.details-form .form-wrapper .input-wrapper button img{
+.details-form .form-wrapper .input-wrapper button img {
   transition: all 0.3s ease;
 }
 
-.details-form .form-wrapper .input-wrapper button:hover img{
+.details-form .form-wrapper .input-wrapper button:hover img {
   transform: translateX(10px);
 }
 
-.spinner, .details-form{
+.spinner,
+.details-form {
   display: none;
 }
 
-.spinner-wrapper{
+.spinner-wrapper {
   position: relative;
 }
 .spinner-container {
   position: relative;
-    height: 360px;
-    width: 360px;
+  height: 360px;
+  width: 360px;
 }
 
 .spinner-inner {
   height: 100%;
-    width: 100%;
+  width: 100%;
 }
 
 .spinner-inner > .spinner-sec {
@@ -149,7 +156,7 @@ header img{
   padding: 1px;
 }
 
-.spinner{
+.spinner {
   margin-left: -150px;
 }
 .spinner-inner > .spinner-sec .spinner-sec-wrapper {
@@ -158,7 +165,7 @@ header img{
   position: relative;
 }
 
-.spinner-inner > .spinner-sec .spinner-sec-wrapper p{
+.spinner-inner > .spinner-sec .spinner-sec-wrapper p {
   color: #fff;
   text-align: center;
   position: absolute;
@@ -171,25 +178,25 @@ header img{
   margin: 0px;
 }
 
-.spinner-inner > .spinner-sec .spinner-sec-wrapper p span{
+.spinner-inner > .spinner-sec .spinner-sec-wrapper p span {
   display: block;
-    font-size: 30px;
-    font-weight: bold;
-    line-height: 110%;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 110%;
 }
 
-.spinner-inner > .spinner-sec2 .spinner-sec-wrapper p{
-    bottom: 15%;
-    left: 10%;
+.spinner-inner > .spinner-sec2 .spinner-sec-wrapper p {
+  bottom: 15%;
+  left: 10%;
 }
-.spinner-inner > .spinner-sec3 .spinner-sec-wrapper p{
-    top: 15%;
-    right: 10%;
+.spinner-inner > .spinner-sec3 .spinner-sec-wrapper p {
+  top: 15%;
+  right: 10%;
 }
 
-.spinner-inner > .spinner-sec4 .spinner-sec-wrapper p{
-    top: 15%;
-    left: 10%;
+.spinner-inner > .spinner-sec4 .spinner-sec-wrapper p {
+  top: 15%;
+  left: 10%;
 }
 
 .spinner-inner > .spinner-sec1 .spinner-sec-wrapper {
@@ -228,7 +235,7 @@ header img{
   transition: all 6s cubic-bezier(0, 0.99, 0.44, 0.99);
   z-index: 1;
 }
-.spinner-ring .green-arrow{
+.spinner-ring .green-arrow {
   position: absolute;
   top: 0px;
   left: 49.5%;
@@ -241,19 +248,19 @@ header img{
   width: 100%;
 }
 
-.shadow{
-    position: absolute;
-    bottom: -65px;
-    width: 100%;
-    left: 50%;
-    transform: translateX(-50%);
+.shadow {
+  position: absolute;
+  bottom: -65px;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.shadow img{
-    max-width: 100%;
+.shadow img {
+  max-width: 100%;
 }
 
-.spinner-button-wrapper{
+.spinner-button-wrapper {
   position: absolute;
   background: #bdcd31;
   padding: 20px 35px 20px 50px;
@@ -264,14 +271,14 @@ header img{
   transform: translateY(-50%);
 }
 
-.spinner-button-wrapper h3{
+.spinner-button-wrapper h3 {
   margin: 0px;
   color: #d64d27;
   font-size: 30px;
   font-weight: bold;
 }
 
-.spinner-button-wrapper button#spin{
+.spinner-button-wrapper button#spin {
   border: none;
   background: #952925;
   color: #fff219;
@@ -282,17 +289,17 @@ header img{
   outline: none;
 }
 
-.finger-wrapper{
+.finger-wrapper {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   top: 96%;
 }
 
-.finger-wrapper img{
+.finger-wrapper img {
   width: 45px;
 }
-.finger-wrapper p{
+.finger-wrapper p {
   color: #952925;
   font-weight: bold;
   line-height: 125%;
@@ -301,29 +308,29 @@ header img{
   font-size: 17px;
 }
 
-.popup{
+.popup {
   display: none;
 }
 
-.popup-wrapper{
+.popup-wrapper {
   position: fixed;
-    top: 0px;
-    left: 0px;
-    height: 100%;
-    width: 100%;
-    z-index: 10;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
 }
 
-.popup-layer{
+.popup-layer {
   position: absolute;
   height: 100%;
   width: 100%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   opacity: 0;
-  transition:all 0.4s ease;
+  transition: all 0.4s ease;
 }
 
-.popup-container{
+.popup-container {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -336,42 +343,42 @@ header img{
   transition: all 0.4s ease;
   opacity: 0;
 }
-.popup .popup-layer.go{
+.popup .popup-layer.go {
   opacity: 1;
 }
 
-.popup .popup-container.go{
+.popup .popup-container.go {
   opacity: 1;
   margin-top: 0px;
 }
 
-.popup-container span.green{
+.popup-container span.green {
   color: #108e45;
 }
 
-.popup-close{
+.popup-close {
   position: absolute;
-    right: -10px;
-    top: -10px;
-    background: #108e45;
-    color: #fff;
-    border-radius: 50%;
-    height: 25px;
-    width: 25px;
-    font-size: 24px;
-    line-height: 25px;
-    text-align: center;
-    cursor: pointer;
+  right: -10px;
+  top: -10px;
+  background: #108e45;
+  color: #fff;
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  font-size: 24px;
+  line-height: 25px;
+  text-align: center;
+  cursor: pointer;
 }
 
-.loader{
+.loader {
   position: fixed;
   z-index: 99;
   height: 100%;
   width: 100%;
   top: 0px;
   left: 0px;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .loader-spinner {
@@ -380,7 +387,7 @@ header img{
   border-radius: 50%;
   width: 70px;
   height: 70px;
-  animation: spin 2s linear infinite;
+  animation: spin 3s linear infinite;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -388,9 +395,14 @@ header img{
   margin-top: -40px;
 }
 
+
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /*ANIMATION*/
@@ -419,6 +431,75 @@ header img{
 }
 
 .spin {
-  -webkit-animation: hh 3s; /* Chrome, Safari, Opera */
-  animation: hh 0.2s infinite linear;
+  -webkit-animation: hh 0.3s  infinite linear; /* Chrome, Safari, Opera */
+  animation: hh 0.3s infinite linear;
+}
+
+@media (max-width: 767px) {
+  header {
+    padding: 10px 20px;
+    position: unset;
+  }
+  .content-wrapper {
+    height: auto;
+    min-height: 100vh;
+  }
+  .main-content {
+    display: block;
+    padding-top: 20px;
+  }
+  header img {
+    height: 60px;
+  }
+  .details-form .form-wrapper .input-wrapper {
+    width: 100%;
+  }
+  .details-form {
+    width: 100%;
+    padding: 15px;
+  }
+  .spinner {
+    margin: 0px;
+    margin-top: 30px;
+  }
+  .spinner-button-wrapper {
+    position: unset;
+    width: 200px;
+    margin: 0 auto;
+    margin-top: 95px;
+    padding: 10px;
+  }
+  .spinner-container {
+    margin: 0 auto;
+    height: 250px;
+    width: 250px;
+  }
+  .spinner-button-wrapper button#spin {
+    padding: 5px 15px;
+    font-size: 16px;
+  }
+  .spinner-button-wrapper h3 {
+    font-size: 18px;
+  }
+  .shadow {
+    display: none;
+  }
+  .spinner-ring .green-arrow {
+    width: 29px;
+  }
+  .finger-wrapper p {
+    font-size: 12px;
+  }
+  .finger-wrapper img {
+    width: 35px;
+  }
+  .spinner-inner > .spinner-sec .spinner-sec-wrapper p {
+    font-size: 14px;
+  }
+  .spinner-inner > .spinner-sec .spinner-sec-wrapper p span {
+    font-size: 20px;
+  }
+  .popup-container {
+    width: 90%;
+  }
 }
