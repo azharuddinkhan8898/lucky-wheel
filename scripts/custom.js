@@ -1,5 +1,18 @@
 $(function(){
-    //set default degree (360*5)
+
+    $(".details-form").show()
+    $(".loader").hide()
+
+    $("#user-form").on("submit", function(e){
+        e.preventDefault();
+        $(".loader").show();
+        //make AJAX request
+        setTimeout(function(){
+            $(".details-form").hide();
+            $(".loader").hide();
+            $(".spinner").show()
+        }, 2000)
+    })
 
     function getRotationDegrees(obj) {
         var matrix = obj.css("-webkit-transform") ||
@@ -34,6 +47,7 @@ $(function(){
     var cssClearTimeout;
     var blinkClearInterval;
     $('#spin').click(function(){
+        $(this).attr("disabled","disabled")
         $(".spinner-ring .green-arrow").show();
         if(cleartimeout){
             clearTimeout(cleartimeout)
@@ -81,7 +95,7 @@ $(function(){
             cssClearTimeout = setTimeout(function(){
                 var check = true;
                 var css = $(".spinner-inner > .spinner-sec[data-id="+randomNum+"] .spinner-sec-wrapper").css("background");
-                var cssAfter = "#287b3d url(./../images/pattern.png) no-repeat center";
+                var cssAfter = "#287b3d url(./images/pattern.png) no-repeat center";
                 blinkClearInterval = setInterval(function(){
                     if(check){
                         $(".spinner-inner > .spinner-sec[data-id="+randomNum+"] .spinner-sec-wrapper").css("background", cssAfter);
@@ -92,6 +106,9 @@ $(function(){
                         check = true;
                     }
                 }, 500)
+                setTimeout(function(){
+                    popupApear()
+                }, 2000)
             }, 6000)
         }, 3000)
 		/*multiply the degree by number of clicks
@@ -99,5 +116,25 @@ $(function(){
     then add to the new degree*/
 		
         
-	});
+    });
+    
+    function popupApear(){
+        $(".popup").show();
+        setTimeout(function(){
+            $(".popup-container, .popup-layer").addClass("go")
+        }, 10)
+       
+    }
+    function popupClose(){
+        $(".popup-container, .popup-layer").removeClass("go")
+        
+        setTimeout(function(){
+            $(".popup").hide();
+        }, 410)
+    }
+
+    $(".popup-layer, .popup-close").click(function(){
+        popupClose();
+    })
+
 })

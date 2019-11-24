@@ -13,28 +13,33 @@
   </head>
   <body>
     <div class="content-wrapper">
+      <div class="loader">
+        <div class="loader-spinner"></div>
+      </div>
       <header>
         <img src="./images/left-logo.png" alt="" class="left-logo">
         <img src="./images/right-logo.png" alt="" class="right-logo">
       </header>
       <div class="main-content">
-        <!-- <div class="details-form">
+        <div class="details-form">
                 <h4>Please fill the below information to proceed</h4>
+                <form action="" id="user-form">
                 <div class="form-wrapper">
                     <div class="input-wrapper">
-                        <input type="text" placeholder="NAME">
+                        <input type="text" placeholder="NAME" id="name" required>
                     </div>
                     <div class="input-wrapper">
-                        <input type="text" placeholder="Name">
+                        <input type="text" placeholder="EMAIL" id="email" required>
                     </div>
                     <div class="input-wrapper">
-                        <input type="text" placeholder="Name">
+                        <input type="text" placeholder="PHONE" id="phone" required>
                     </div>
                     <div class="input-wrapper">
-                        <button class="submit-button"><img src="./images/arrow.png" alt=""></button>
+                        <button class="submit-button" type="submit"><img src="./images/arrow.png" alt=""></button>
                     </div>
+                  </form>
                 </div>
-            </div> -->
+            </div>
         <div class="spinner">
           <div class="spinner-wrapper">
             <div class="spinner-container">
@@ -64,17 +69,33 @@
                   </div>
                 </div>
               </div>
-              <div class="shadow">
-                  <img src="./images/shadow.png" alt="">
+              
+            </div>
+            <div class="shadow">
+              <img src="./images/shadow.png" alt="">
+          </div>
+          <div class="spinner-button-wrapper">
+            <h3>WHEEL OF HAPPINESS</h3>
+            <button id="spin">SPIN & WIN</button>
+            <div class="finger-wrapper">
+              <img src="./images/click-finger.png" alt="">
+              <p>Click to spin <br/>the wheel</p>
+            </div>
+          </div>
+          </div>
+        </div>
+
+        <div class="popup">
+          <div class="popup-wrapper">
+            <div class="popup-layer">
+
+            </div>
+            <div class="popup-container">
+              <div class="popup-close">
+                <span>&times;</span>
               </div>
-              <div class="spinner-button-wrapper">
-                <h3>WHEEL OF HAPPINESS</h3>
-                <button id="spin">SPIN & WIN</button>
-                <div class="finger-wrapper">
-                  <img src="./images/click-finger.png" alt="">
-                  <p>Click to spin <br/>the wheel</p>
-                </div>
-              </div>
+              <h4><span class="green">Congratulations!</span></h4>
+              <p>You have won an insta Care FREE SERVICE for spinning the LAKME SALON Hapiness wheel.</p>
             </div>
           </div>
         </div>
