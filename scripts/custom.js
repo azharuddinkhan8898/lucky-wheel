@@ -1,5 +1,6 @@
 $(function() {
   var isFormSub = false;
+  var userName;
   $(".spinner").show();
   $(".loader").hide();
   $("#user-form").on("submit", function(e) {
@@ -7,6 +8,7 @@ $(function() {
     $(".loader").show();
     //make AJAX request
     isFormSub = true;
+    userName = $("#name").val()
     setTimeout(function() {
       $(".details-form").hide();
       $(".loader").hide();
@@ -153,12 +155,60 @@ $(function() {
     popupClose("common");
     setTimeout(function(){
       popupApear("gif");
+      setTimeout(function(){
+        doit();
+      }, 500)
     }, 500)
   });
 
   $(".popup.gif .popup-layer, .popup.gif .popup-close").click(function() {
     popupClose("gif");
+    
   });
 
 
+  function doit() {
+    var previewContainer = document.getElementById("previewContainer");
+    //var textImage = document.getElementById("textImage");
+    var templateImage = document.getElementById("templateImage");
+    
+    var w = templateImage.width;
+    var h = templateImage.height;
+    console.log(w,h)
+    //previewContainer.removeChild(previewContainer.children[1]);
+  
+    var gif = new SuperGif({
+      gif: templateImage,
+      progressbar_height: 0,
+      auto_play: true,
+      loop_mode: true,
+      draw_while_loading: true
+    });
+  
+    gif.load();
+  
+    var gif_canvas = gif.get_canvas(); // the lib canvas
+    // a copy of this canvas which will be appended to the doc
+    var canvas = gif_canvas.cloneNode();
+    var context = canvas.getContext('2d');
+  
+    function anim(t) { // our animation loop
+      context.clearRect(0,0,canvas.width,canvas.height); // in case of transparency ?
+      context.drawImage(gif_canvas, 0, 0, canvas.width, canvas.height); // draw the gif frame
+      context.font = canvas.height/100 * 3 + "px Arial";
+      context.fillStyle = "#5ead48";
+      context.textAlign = "center";
+      context.fillText(userName, canvas.height/100 * 50, canvas.width/100 * 43); // then the text
+      requestAnimationFrame(anim);
+    };
+    anim();
+  
+    previewContainer.replaceChild(canvas, previewContainer.children[0]);
+  }
+
+  // setTimeout(function(){
+    
+  // }, 500)
+
+  
 });
