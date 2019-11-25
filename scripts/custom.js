@@ -207,8 +207,15 @@ $(function() {
   }
 
   // setTimeout(function(){
-    
+  //   doit()
   // }, 500)
+
+  $(".share-on-facebook").click(function(){
+    var link = document.createElement('a');
+    link.download = 'Certificate.png';
+    link.href = document.querySelector("#previewContainer canvas").toDataURL()
+    link.click();
+  })
 
   
 });
