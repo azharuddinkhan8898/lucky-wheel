@@ -1,11 +1,12 @@
 $(function() {
-  $(".details-form").show();
+  var isFormSub = false;
+  $(".spinner").show();
   $(".loader").hide();
-
   $("#user-form").on("submit", function(e) {
     e.preventDefault();
     $(".loader").show();
     //make AJAX request
+    isFormSub = true;
     setTimeout(function() {
       $(".details-form").hide();
       $(".loader").hide();
@@ -51,7 +52,15 @@ $(function() {
   var cssClearTimeout;
   var blinkClearInterval;
   $("#spin").click(function() {
+    if(!isFormSub){
+      $(".details-form").show();
+      $(".spinner").hide();
+      return false;
+    }
+
     $(this).attr("disabled", "disabled");
+    $(this).text("SPINNING...").css({"background":"transparent", "color":"#fff"});
+    $(".finger-wrapper").hide();
     $(".spinner-ring .green-arrow").show();
     if (cleartimeout) {
       clearTimeout(cleartimeout);
@@ -93,6 +102,7 @@ $(function() {
         transform: "scale(1.16) rotate(" + totalDegree + "deg)"
       });
       cssClearTimeout = setTimeout(function() {
+        $("#spin").hide();
         var check = true;
         var css = $(
           ".spinner-inner > .spinner-sec[data-id=" +
@@ -119,30 +129,36 @@ $(function() {
           }
         }, 500);
         setTimeout(function() {
-          popupApear();
+          popupApear("text");
         }, 2000);
       }, 6000);
     }, 3000);
-    /*multiply the degree by number of clicks
-	  generate random number between 1 - 360, 
-    then add to the new degree*/
   });
 
-  function popupApear() {
-    $(".popup").show();
+  function popupApear(val) {
+    $(".popup."+val).show();
     setTimeout(function() {
-      $(".popup-container, .popup-layer").addClass("go");
+      $(".popup."+val+" .popup-container, .popup."+val+" .popup-layer").addClass("go");
     }, 10);
   }
-  function popupClose() {
-    $(".popup-container, .popup-layer").removeClass("go");
+  function popupClose(val) {
+    $(".popup."+val+" .popup-container, .popup."+val+" .popup-layer").removeClass("go");
 
     setTimeout(function() {
-      $(".popup").hide();
+      $(".popup."+val).hide();
     }, 410);
   }
 
-  $(".popup-layer, .popup-close").click(function() {
-    popupClose();
+  $(".popup.text .popup-layer, .popup.text .popup-close").click(function() {
+    popupClose("common");
+    setTimeout(function(){
+      popupApear("gif");
+    }, 500)
   });
+
+  $(".popup.gif .popup-layer, .popup.gif .popup-close").click(function() {
+    popupClose("gif");
+  });
+
+
 });

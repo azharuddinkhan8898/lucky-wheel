@@ -240,7 +240,7 @@ header img {
   top: 0px;
   left: 49.5%;
   transform: translateX(-50%);
-  width: 49px;
+  width: 42px;
   display: none;
 }
 
@@ -287,6 +287,14 @@ header img {
   margin-top: 10px;
   font-size: 18px;
   outline: none;
+}
+
+.divider-line{
+  height: 1px;
+  background: #fff;
+  display: block;
+  margin: 10px 20px;
+  position: relative;
 }
 
 .finger-wrapper {
@@ -395,7 +403,29 @@ header img {
   margin-top: -40px;
 }
 
+.gif-certificate{
+  max-width: 100%;
+  max-height: 80vh;
 
+}
+
+.popup.gif .popup-container{
+  width: auto;
+  padding: 0px;
+  background: transparent;
+}
+button.share-on-facebook{
+  display: block;
+  margin: 0 auto;
+  background: #108e45;
+  color: #fff;
+  border: navajowhite;
+  border-radius: 7px;
+  padding: 7px 15px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+}
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -500,6 +530,9 @@ header img {
     font-size: 20px;
   }
   .popup-container {
+    width: 90%;
+  }
+  .popup.gif .popup-container{
     width: 90%;
   }
 }
