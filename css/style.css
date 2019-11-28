@@ -426,6 +426,10 @@ button.share-on-facebook{
   font-weight: bold;
   margin-top: 20px;
 }
+
+.details-form .form-wrapper .input-wrapper button span {color: #FFF; padding-right: 10px;font-family: "Avenir-medium";}
+.details-form .form-wrapper .input-wrapper button img {vertical-align: text-bottom;}
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
