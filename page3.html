@@ -94,7 +94,9 @@
         $(function () {
             $(".spinner").show();
             $(".loader").hide();
-            doit("userName")
+            $(window).on("load", function(){
+                doit("userName")
+            })
             function popupClose(val) {
                 $(".popup." + val + " .popup-container, .popup." + val + " .popup-layer").removeClass("go");
 
@@ -128,6 +130,7 @@
 
                 function anim(t) { // our animation loop
                     context.clearRect(0, 0, canvas.width, canvas.height); // in case of transparency ?
+                    console.log(canvas.width, canvas.height)
                     context.drawImage(gif_canvas, 0, 0, canvas.width, canvas.height); // draw the gif frame
                     context.font = canvas.height / 100 * 3 + "px Arial";
                     context.fillStyle = "#5ead48";
@@ -148,6 +151,8 @@
                 link.click();
             })
         })
+
+        
     </script>
 </body>
 
